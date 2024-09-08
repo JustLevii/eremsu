@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erem Seni Seviyorum</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffebee;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .heart {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-color: pink;
+            transform: rotate(45deg);
+            opacity: 0.7;
+            animation: floatUp 8s infinite ease-in-out;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-color: pink;
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: -20px;
+            left: 0;
+        }
+
+        .heart::after {
+            top: 0;
+            left: -20px;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) rotate(45deg);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(45deg);
+                opacity: 0;
+            }
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #e91e63;
+            text-shadow: 2px 2px #f8bbd0;
+            text-align: center;
+            padding: 20px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* Responsive design adjustments */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .heart {
+                width: 30px;
+                height: 30px;
+            }
+
+            .heart::before,
+            .heart::after {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Erem seni çoookk seviyorum ❤️</h1>
+    <div class="hearts">
+        <!-- Multiple hearts with responsive sizes and positions -->
+        <div class="heart" style="top: 80%; left: 10%; animation-duration: 10s;"></div>
+        <div class="heart" style="top: 70%; left: 40%; animation-duration: 12s;"></div>
+        <div class="heart" style="top: 60%; left: 20%; animation-duration: 9s;"></div>
+        <div class="heart" style="top: 50%; left: 60%; animation-duration: 11s;"></div>
+        <div class="heart" style="top: 30%; left: 80%; animation-duration: 14s;"></div>
+        <div class="heart" style="top: 20%; left: 30%; animation-duration: 13s;"></div>
+        <div class="heart" style="top: 10%; left: 70%; animation-duration: 8s;"></div>
+    </div>
+</body>
+</html>
